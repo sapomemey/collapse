@@ -1,122 +1,52 @@
-<!doctype html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="author" content="Paul Lewis" />
-  <meta name="viewport" content="width=device-width,minimum-scale=1.0">
-  <title>Menu Clip</title>
-  <style>
-    .menu {
-      position: absolute;
-      opacity: 0;
-      pointer-events: none;
-      transform-origin: top left;
-      overflow: hidden;
-      contain: content;
-      border-radius: 3px;
-      box-shadow: 0 3px 3px rgba(0, 0, 0, 0.4);
-      background: #FFF;
-      will-change: transform;
-      animation-duration: 200ms;
-      animation-timing-function: step-end;
-    }
-
-    .menu__contents {
-      transform-origin: top left;
-      will-change: transform;
-      contain: content;
-      animation-duration: 200ms;
-      animation-timing-function: step-end;
-    }
-
-    .menu__toggle {
-      text-align: left;
-      padding: 0;
-      margin: 0;
-      border: none;
-      background: none;
-      cursor: pointer;
-      width: 100%;
-    }
-
-    .menu__title {
-      padding: 0;
-      margin: 0;
-      font-weight: 500;
-      display: inline-block;
-      padding: 8px 12px;
-    }
-
-    .menu__items {
-      position: relative;
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      background: #FFF;
-      z-index: 1;
-    }
-
-    .menu__item {
-      padding: 8px 12px;
-      border-top: 1px solid #DDD;
-    }
-
-    .menu--active {
-      opacity: 1;
-      pointer-events: auto;
-    }
-
-    .menu--expanded {
-      animation-name: menuExpandAnimation;
-    }
-
-    .menu__contents--expanded {
-      animation-name: menuExpandContentsAnimation;
-    }
-
-    .menu--collapsed {
-      animation-name: menuCollapseAnimation;
-    }
-
-    .menu__contents--collapsed {
-      animation-name: menuCollapseContentsAnimation;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 </head>
 
 <body>
-  <div class="menu">
-    <div class="menu__contents">
-      <div class="menu__toggle">
-        <h1 class="menu__title">Menu item a</h1>
-      </div>
-      <ul class="menu__items">
-        <li class="menu__item">Menu item 1</li>
-        <li class="menu__item">Menu item 2</li>
-        <li class="menu__item">Menu item 3</li>
-        <li class="menu__item">Menu item 4</li>
-        <li class="menu__item">Menu item 1</li>
-        <li class="menu__item">Menu item 2</li>
-        <li class="menu__item">Menu item 3</li>
-        <li class="menu__item">Menu item 4</li>
-        <li class="menu__item">Menu item 1</li>
-        <li class="menu__item">Menu item 2</li>
-        <li class="menu__item">Menu item 3</li>
-        <li class="menu__item">Menu item 4</li>
-        <li class="menu__item">Menu item 1</li>
-        <li class="menu__item">Menu item 2</li>
-        <li class="menu__item">Menu item 3</li>
-        <li class="menu__item">Menu item 4</li>
-        <li class="menu__item">Menu item 1</li>
-        <li class="menu__item">Menu item 2</li>
-        <li class="menu__item">Menu item 3</li>
-        <li class="menu__item">Menu item 4</li>
-      </ul>
+
+  <style>
+    .container {
+      border: 3px solid red;
+      margin: 0 auto;
+      max-width: 300px;
+      border-radius: 3px;
+    }
+
+    .section {
+      overflow: hidden;
+      transition: height 0.3s ease-out;
+      height: 0;
+      border:3px solid blue;
+    }
+  </style>
+
+  <div class="container">
+    <div class="section">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat.</p>
+    </div>
+    <div class="section collapsible" data-collapsed="true">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua.</p>
+    </div>
+    <div class="section">
+      <p>Ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat.</p>
     </div>
   </div>
 
-  <!-- <script src="menu.js"></script> -->
-  <script src="bundle.js"></script>
+  <button id="toggle-button">Toggle collapse</button>
+
+  <script src="collapse.js"></script>
+
 </body>
 
 </html>
